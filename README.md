@@ -1,3 +1,9 @@
+Patch for Rails 4.2
+===================
+
+* adding `*args` on method
+* Gemfile : gem 'bartt-ssl_requirement', git: "https://github.com/SoftwareSeniPT/ssl_requirement", require: 'ssl_requirement'
+
 Installing
 ==========
 
