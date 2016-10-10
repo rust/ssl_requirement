@@ -1,18 +1,15 @@
-Patch for Rails 4.2
+Patch for Rails 5.0
 ===================
 
-* adding `*args` on method
-* Gemfile : `gem 'bartt-ssl_requirement', git: "https://github.com/SoftwareSeniPT/ssl_requirement", require: 'ssl_requirement'`
+* Update some deprecated methods
 
 Installing
 ==========
 
-This version of SSL Requirement is **only** compatible with Rails 3.x.  To install add the following line to your project's
+This version of SSL Requirement is **only** compatible with Rails 5.x.  To install add the following line to your project's
 `Gemfile`:
 
     gem 'bartt-ssl_requirement', '~>1.4.0', :require => 'ssl_requirement'
-
-`bartt-ssl_requirement` is compatible with ruby 1.8.7 and 1.9.x.
 
 SSL Requirement
 ===============
