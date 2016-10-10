@@ -9,7 +9,11 @@ require "ssl_requirement"
 
 ROUTES = ActionDispatch::Routing::RouteSet.new
 ROUTES.draw do
-  match ':controller(/:action(/:id(.:format)))', via: [:get, :post]
+  %w(ssl_requirement ssl_exception ssl_all_actions ssl_allow_all_actions ssl_allow_all_and_require).each do |c|
+    %w(a b c d set_flush).each do |a|
+      get "#{c}/#{a}", to: "#{c}##{a}"
+    end
+  end
 end
 ROUTES.finalize!
 
@@ -47,10 +51,6 @@ class SslRequirementController < ActionController::Base
     flash[:foo] = "bar"
     render :nothing => true
   end
-
-  def self._routes
-    ROUTES
-  end
 end
 
 class SslExceptionController < ActionController::Base
@@ -76,10 +76,6 @@ class SslExceptionController < ActionController::Base
   def d
     render :nothing => true
   end
-
-  def self._routes
-    ROUTES
-  end
 end
 
 class SslAllActionsController < ActionController::Base
@@ -90,10 +86,6 @@ class SslAllActionsController < ActionController::Base
 
   def a
     render :nothing => true
-  end
-
-  def self._routes
-    ROUTES
   end
 end
 
@@ -109,10 +101,6 @@ class SslAllowAllActionsController < ActionController::Base
 
   def b
     render :nothing => true
-  end
-
-  def self._routes
-    ROUTES
   end
 end
 

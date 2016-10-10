@@ -10,7 +10,7 @@ class UrlRewriterTest < Test::Unit::TestCase
     @routes = ActionDispatch::Routing::RouteSet.new
     @routes.default_url_options[:host] = 'test.host'
     @routes.draw do
-      match ':controller(/:action(/:id(.:format)))', via: [:get, :post]
+      get "c/a", to: "c#a"
     end
     @ssl_host_override = "www.example.com:80443"
     @non_ssl_host_override = "www.example.com:8080"
