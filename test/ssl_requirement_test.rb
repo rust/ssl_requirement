@@ -9,7 +9,7 @@ require "ssl_requirement"
 
 ROUTES = ActionDispatch::Routing::RouteSet.new
 ROUTES.draw do
-  match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))', via: [:get, :post]
 end
 ROUTES.finalize!
 
